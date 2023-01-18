@@ -88,8 +88,9 @@ const commonlogin = async (request,response,next) =>{
 
     //npm i jsonwebtoken
 
-    var token  = jwt.sign({_id:res._id},res.salt);//first argument must be object!
+    // var token  = jwt.sign({_id:res._id},res.salt);//first argument must be object!
 
+    var token  = jwt.sign({_id:res._id},key);
 
     //to show on frontend
     request.body.token=token;
@@ -102,4 +103,6 @@ const commonlogin = async (request,response,next) =>{
    
 }
 
-module.exports={register,login,reset,commonlogin};
+const key = "iedbvuhecyebcjiencjekdjckemcl";//random key
+
+module.exports={register,login,reset,commonlogin,key};

@@ -3,7 +3,7 @@ const {Schema,model} = require("mongoose");
 const blogSchema = new Schema(
 {
     title:String,
-    discription:String,
+    description:String,
     user_id:{type:Schema.Types.ObjectId, ref:"User"}, //here in ref use first argument of mogoose.model of User schema, no need to import mogoose automatically understand!
     
     //here "" iss mai User daal diya toh chal jaega as here all DBs in one 

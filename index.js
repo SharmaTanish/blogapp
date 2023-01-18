@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const parser = require("body-parser");
 const {authRouter} = require("./src/auth/router");
+const { blogRouter } = require("./src/blog/router");
 
 
 const app = express();
@@ -18,6 +19,7 @@ mongoose.connection.on("connected",()=>{
 
 
 app.use("/auth",authRouter);
+app.use("/blog",blogRouter);
 
 
 
