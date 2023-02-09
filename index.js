@@ -4,6 +4,7 @@ const cors = require("cors");
 const parser = require("body-parser");
 const {authRouter} = require("./src/auth/router");
 const { blogRouter } = require("./src/blog/router");
+const {commentRouter} = require("./src/comment/router");
 
 
 const app = express();
@@ -20,7 +21,7 @@ mongoose.connection.on("connected",()=>{
 
 app.use("/auth",authRouter);
 app.use("/blog",blogRouter);
-
+app.use("/comment",commentRouter);
 
 
 app.listen(4000, () => {

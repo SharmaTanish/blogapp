@@ -7,7 +7,7 @@ const { User } = require("../auth/model");
 
 const isAuthenticated = async (request,response,next) =>{
     var token = request.headers.authorization;
-    console.log(token);
+    // console.log(token);
     if(!token){
         return response.json({status:"Error",msg:"Token required"});
     }

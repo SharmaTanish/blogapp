@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const commentSchema = mongoose.Schema(
     {
         comment:String,
-        user_id:{type:mongoose.Schema.typeOf.ObjectId, ref:"User"},
-        blog_id:{type:mongoose.Schema.typeOf.ObjectId, ref:"Blog"},
+        user_id:{type:mongoose.Schema.Types.ObjectId, ref:"User"},
+        blog_id:{type:mongoose.Schema.Types.ObjectId, ref:"Blog"},
     }
     ,
     {
